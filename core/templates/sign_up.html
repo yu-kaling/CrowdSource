@@ -9,9 +9,9 @@
                     <div class="text-center pt-2">
                         <h4>
                         {% if request.GET.next != '/courier/' %}
-                        依頼人 | 新規ユーザ登録
+                        依頼人 | 新規ユザ登録
                         {% else %}
-                        配達人 | 新規ユーザ登録
+                        配達人 | 新規ユザ登録
                         {% endif %}
                         </h4>
                         
@@ -22,10 +22,10 @@
                         {% csrf_token %}
                         {% bootstrap_form form %}
                         <button type="submit" class="btn btn-primary btn-block">
-                            新規ユーザ登録
+                            新規ユーザ\登録
                         </button>
                         <p class="text-center mt-3">
-                            登録がお済みの方<a href="/sign-in/?next={{ request.GET.next }}"><span class="btn btn-outline-success btn-sm ml-2">ログイン</span></a>
+                            登録がお済み\の方<a href="/sign-in/?next={{ request.GET.next }}"><span class="btn btn-outline-success btn-sm ml-2">ログイン</span></a>
                         </p>
                     </form>
                 </div>

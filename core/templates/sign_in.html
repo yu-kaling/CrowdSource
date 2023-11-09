@@ -9,9 +9,9 @@
                     <div class="text-center pt-2">
                         <h4>
                         {% if request.GET.next != '/courier/' %}
-                        依頼人
+                        依ーーー頼人
                         {% else %}
-                        配達人
+                        配ーーー達人
                         {% endif %}
                         </h4>
                         
@@ -26,10 +26,10 @@
                         {% bootstrap_label "パスワード" %}
                         {% bootstrap_field form.password show_label=False placeholder="パスワード" %}
                         <button class="btn btn-info btn-block">
-                            サインイン
+                            さいんいん
                         </button>
                         <p class="text-center mt-3">
-                            登録がお済みでない方<a href="/sign-up/?next={{ request.GET.next }}"><span class="btn btn-outline-success btn-sm ml-2">新規登録</span></a>
+                            登録がまだの場合<a href="/sign-up/?next={{ request.GET.next }}"><span class="btn btn-outline-success btn-sm ml-2">新規登録</span></a>
                         </p>
                     </form>
                 </div>

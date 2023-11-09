@@ -8,18 +8,18 @@
         <div class="col-lg-6 mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">依頼人</h5>
+                    <h5 class="card-title">依頼者</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="/customer/" class="btn btn-info">詳細</a>
+                    <a href="{% url 'customer:home' %}" class="btn btn-info">詳細</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 mb-4">    
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">配達人</h5>
+                    <h5 class="card-title">仕事引受人</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="/courier/" class="btn btn-info">詳細</a>
+                    <a href="{% url 'courier:home' %}" class="btn btn-info">詳細</a>
                 </div>
             </div>
         </div>                     

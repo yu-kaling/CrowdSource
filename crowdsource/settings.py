@@ -37,8 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
+    # 'core', #削除する
     'bootstrap4',
+    # 'social_django', # Facebookでのログインに用いる？
+
+#     social-auth-app-djangoとは
+# DjangoでOAuth認証を行う時に使うサードパーティ製のパッケージ
+# Google, Twitter, Facebook などのプロバイダーのアカウントを使って認証処理ができる
+
+# らしい。(参照: https://qiita.com/Tonky/items/be5412724f36e6847271)
+
+    'core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +138,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/sign-in/'
 LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'tomakaisei@gmail.com'
+EMAIL_HOST_PASSWORD = 'ezwv dyrl bqyp trmr' #生成したアプリパスワード
+DEFAULT_FROM_EMAIL = 'Crowd Source<no-reply@crowd.localhost>' #送信者のアドレスが空の場合に使用

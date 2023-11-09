@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>クラウドソーシングアプリ</title>
+        <title>クラソアプリ</title>
         {% load bootstrap4 %}
         {% bootstrap_css %}
         {% bootstrap_javascript jquery='full' %}
@@ -11,7 +11,7 @@
     </head>
     <body>
         <nav class="navbar {% if not request.user.is_authenticated %} navbar-expand-lg {% endif %} navbar-dark bg-dark">
-            <a class="navbar-brand" href="/">クラウドソーシングアプリ</a>
+            <a class="navbar-brand" href="/">クラッソアプリ</a>
             {% if not request.user.is_authenticated %}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
                 {{ request.user.get_full_name | title }}
               </span>
               <span>
-                <a href="/sign-out" class="btn btn-outline-dark bg-light">ログアウト</a>
+                <a href="/sign-out" class="btn btn-outline-dark bg-light">ローグアウト</a>
               </span>
             </form>
             {% endif %}
@@ -42,7 +42,7 @@
           
           
         <footer class="text-center mt-5 mb-5">
-            &copy; 学生向けプログラミング入門 | 無料
+            &copy; ('ω')ﾉｼ
         </footer>
     </body>
 </html>
