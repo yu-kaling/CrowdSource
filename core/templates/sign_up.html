@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header bg-primary text-light">
+                    <div class="text-center pt-2">
+                        <h4>
+                        {% if request.GET.next != '/courier/' %}
+                        依頼人 | 新規ユーザ登録
+                        {% else %}
+                        配達人 | 新規ユーザ登録
+                        {% endif %}
+                        </h4>
+                        
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        <button type="submit" class="btn btn-primary btn-block">
+                            新規ユーザ登録
+                        </button>
+                        <p class="text-center mt-3">
+                            登録がお済みの方<a href="/sign-in/?next={{ request.GET.next }}"><span class="btn btn-outline-success btn-sm ml-2">ログイン</span></a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

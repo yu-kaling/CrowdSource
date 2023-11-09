@@ -10,28 +10,39 @@
         {% block head %}{% endblock %}
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar {% if not request.user.is_authenticated %} navbar-expand-lg {% endif %} navbar-dark bg-dark">
             <a class="navbar-brand" href="/">クラウドソーシングアプリ</a>
+            {% if not request.user.is_authenticated %}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/customer/">依頼人</span></a>
+                <li class="nav-item mr-2 ml-4 {% if request.GET.next != '/courier/' %} active {% endif %}">
+                 <a class="nav-link btn btn-light {% if request.GET.next != '/courier/' %}bg-success{% else %}bg-dark{% endif %}" href="/sign-in/?next=/customer/">依頼者</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/courier/">配達人</a>
+                <li class="nav-item {% if request.GET.next == '/courier/' %} active {% endif %}">
+                  <a class="nav-link btn btn-light {% if request.GET.next == '/courier/' %}bg-primary{% else %}bg-dark{% endif %}" href="/sign-in/?next=/courier/">仕事引受人</a>
                 </li>
               </ul>
             </div>
+            {% else %}
+            <form class="form-inline">
+              <span class="mr-4 text-light">
+                {{ request.user.get_full_name | title }}
+              </span>
+              <span>
+                <a href="/sign-out" class="btn btn-outline-dark bg-light">ログアウト</a>
+              </span>
+            </form>
+            {% endif %}
         </nav>
         {% block content %}{% endblock %}
           
           
         <footer class="text-center mt-5 mb-5">
-            &copy; クラウドソーシングアプリ
+            &copy; 学生向けプログラミング入門 | 無料
         </footer>
     </body>
 </html>
